@@ -1,0 +1,16 @@
+name: 'PR Size Labeler Caller'
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  pull-requests: write
+  contents: read
+  
+jobs:
+  call-reusable:
+    uses: NathanaelGandhi/pr-size-labeler-reusable-workflow/.github/workflows/pr-size-labeler-reusable.yaml@v0.1.1
+    secrets:
+      caller_token: ${{ secrets.GITHUB_TOKEN }}

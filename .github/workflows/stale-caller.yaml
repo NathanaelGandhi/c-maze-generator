@@ -1,0 +1,17 @@
+name: 'Stale Issues and PRs Caller'
+
+on:
+  schedule:
+    # run stale daily at 01:30
+    - cron: '30 1 * * *'
+
+permissions:
+  issues: write
+  pull-requests: write
+  contents: read
+  
+jobs:
+  call-reusable:
+    uses: NathanaelGandhi/stale-reusable-workflow/.github/workflows/stale-reusable.yaml@v0.1.1
+    secrets:
+      caller_token: ${{ secrets.GITHUB_TOKEN }}

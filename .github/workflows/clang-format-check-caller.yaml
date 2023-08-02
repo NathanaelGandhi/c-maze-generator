@@ -1,0 +1,12 @@
+name: 'Clang Format Check Caller'
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  clang-format-check:
+    uses: NathanaelGandhi/clang-format-check-reusable-workflow/.github/workflows/clang-format-check-reusable.yaml@v0.1.3
+    secrets:
+      caller_token: ${{ secrets.GITHUB_TOKEN }}
