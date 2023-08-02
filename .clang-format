@@ -1,0 +1,14 @@
+################################################################################
+# Title:  Clang format file for C/C++ projects
+# Author: Nathanael Gandhi | gist.github.com/NathanaelGandhi
+# Notes:  see https://clang.llvm.org/docs/ClangFormatStyleOptions.html
+################################################################################
+BasedOnStyle: Google
+---
+################################################################################
+Language: Cpp
+IndentWidth: 4
+UseTab: Never
+ColumnLimit: 80
+ReferenceAlignment: Right
+################################################################################
