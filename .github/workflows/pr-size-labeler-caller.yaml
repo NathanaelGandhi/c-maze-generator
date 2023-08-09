@@ -11,6 +11,6 @@ permissions:
   
 jobs:
   call-reusable:
-    uses: NathanaelGandhi/pr-size-labeler-reusable-workflow/.github/workflows/pr-size-labeler-reusable.yaml@v0.1.1
+    uses: NathanaelGandhi/pr-size-labeler-reusable-workflow/.github/workflows/pr-size-labeler-reusable.yaml@v0.1.2
     secrets:
       caller_token: ${{ secrets.GITHUB_TOKEN }}
