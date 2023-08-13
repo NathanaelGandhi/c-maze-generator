@@ -31,7 +31,7 @@ void MazeGen_print_maze(const MazeGen_Maze *maze) {
     for (int32_t row = 0; row < maze->rows; row++) {
         for (int32_t column = 0; column < maze->columns; column++) {
             int32_t current_index =
-                _MazeGen_index_from_position(row, column, maze->columns);
+                _MazeGen_position_to_index(row, column, maze->columns);
             char printable_char;
             switch (maze->grid[current_index].type) {
                 case MazeGen_WALL:
@@ -57,8 +57,8 @@ void MazeGen_print_maze(const MazeGen_Maze *maze) {
     return;
 }
 
-int32_t _MazeGen_index_from_position(const int32_t row, const int32_t column,
-                                     const int32_t num_columns) {
+int32_t _MazeGen_position_to_index(const int32_t row, const int32_t column,
+                                   const int32_t num_columns) {
     return row * num_columns + column;
 }
 
@@ -68,7 +68,7 @@ void _MazeGen_generate_grid(MazeGen_Maze *maze) {
         for (int32_t column = 0; column < maze->columns; column++) {
             // calculate the position in the linear array
             int32_t current_cell =
-                _MazeGen_index_from_position(row, column, maze->columns);
+                _MazeGen_position_to_index(row, column, maze->columns);
             // assign to the maze
             maze->grid[current_cell].row = row;
             maze->grid[current_cell].column = column;
@@ -81,7 +81,7 @@ void _MazeGen_generate_grid(MazeGen_Maze *maze) {
 
 void _MazeGen_set_cell_type(const int32_t row, const int32_t column,
                             const MazeGen_CellType type, MazeGen_Maze *maze) {
-    maze->grid[_MazeGen_index_from_position(row, column, maze->columns)].type =
+    maze->grid[_MazeGen_position_to_index(row, column, maze->columns)].type =
         type;
 
     return;

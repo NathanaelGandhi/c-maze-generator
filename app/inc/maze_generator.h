@@ -38,8 +38,8 @@ void MazeGen_deinit(void);
 void MazeGen_print_maze(const MazeGen_Maze* maze);
 
 // private
-int32_t _MazeGen_index_from_position(const int32_t row, const int32_t column,
-                                     const int32_t num_columns);
+int32_t _MazeGen_position_to_index(const int32_t row, const int32_t column,
+                                   const int32_t num_columns);
 void _MazeGen_generate_grid(MazeGen_Maze* maze);
 void _MazeGen_set_cell_type(const int32_t row, const int32_t column,
                             const MazeGen_CellType type, MazeGen_Maze* maze);
